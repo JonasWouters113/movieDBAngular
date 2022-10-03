@@ -1,0 +1,8 @@
+<div *ngIf="movie">
+  <p>{{ film.Title }}</p>
+  <img [src]="film.Poster" alt="Poser film {{ film.Title }}">
+  <button *ngIf="!isDetail" (click)="details( film.imdbID )">Details</button>
+</div>
+<div **ngIf="isDetail">
+  Halloow
+</div>
