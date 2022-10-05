@@ -15,15 +15,15 @@ export class MoviesPageComponent implements OnInit {
   }
 
   previousPage(){
-    this.apiService.optionsSearch.page -= 1;
-    if(this.apiService.optionsSearch.page < 1) this.apiService.optionsSearch.page = 1;
-    this.moviesComponent.getApiResponseMovies();
+    this.apiService.options.page -= 1;
+    if(this.apiService.options.page < 1) this.apiService.options.page = 1;
+    this.moviesComponent.getApiResponseMovies(this.apiService.options.search);
   }
 
   nextPage(){
-    this.apiService.optionsSearch.page += 1;
-    if(this.apiService.optionsSearch.page < 1) this.apiService.optionsSearch.page = 1;
-    this.moviesComponent.getApiResponseMovies();
+    this.apiService.options.page += 1;
+    if(this.apiService.options.page < 1) this.apiService.options.page = 1;
+    this.moviesComponent.getApiResponseMovies(this.apiService.options.search);
   }
 
 }

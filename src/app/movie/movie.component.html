@@ -1,8 +1,10 @@
-<div *ngIf="movie">
-  <p>{{ film.Title }}</p>
-  <img [src]="film.Poster" alt="Poser film {{ film.Title }}">
-  <button *ngIf="!isDetail" (click)="details( film.imdbID )">Details</button>
+<div *ngIf="movie" class="flex flex-col">
+  <div class="rounded-lg shadow">
+    <img [src]="movie.Poster" alt="Poser film {{ movie.Title }}">
+    <div class="p-6">
+      <h1>{{ movie.Title }}</h1>
+      <button (click)="toggleDetails()">Details</button>
+    </div>
+  </div>
 </div>
-<div **ngIf="isDetail">
-  Halloow
-</div>
+<app-modal [movie]="movie" [visible]="isDetail"></app-modal>

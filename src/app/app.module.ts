@@ -9,6 +9,8 @@ import { MovieComponent } from './movie/movie.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { MoviesPageComponent } from './movies-page/movies-page.component';
+import { ModalComponent } from './modal/modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { MoviesPageComponent } from './movies-page/movies-page.component';
     HomeComponent,
     ContactComponent,
     MoviesPageComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

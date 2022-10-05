@@ -1,0 +1,8 @@
+<div *ngIf="visible" class="modal">
+  <div class="modal-content">
+    <button class="close" (click)="closeModal()">Close modal</button>
+    <div class="flex">
+      <img [src]="movie.Poster" alt="Poser film {{ movie.Title }}">
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { parse } from 'postcss';
 import { ApiService } from '../api.service'
 
 @Component({
@@ -11,19 +13,26 @@ export class MoviesComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   movies:any;
+  searchTitle: string = 'Pirates';
 
   ngOnInit(): void {
-    this.inVariable();
+    this.inVariable(this.searchTitle);
   }
 
-  getApiResponseMovies(){
-    return this.apiService.getMovies()
+  getApiResponseMovies(title: string){
+    return this.apiService.getMovies(title)
     .then((response) => response.json())
     .then((data) => data.Search)
     .catch(error => console.log('error:', error));
   }
 
-  async inVariable(){
-    this.movies = await this.getApiResponseMovies();
+  async inVariable(title:string){
+    this.movies = await this.getApiResponseMovies(title);
+  }
+
+  onSearch(form: NgForm){
+    this.searchTitle = form.value.title;
+    console.log(this.searchTitle)
+    this.getApiResponseMovies(this.searchTitle);
   }
 }
