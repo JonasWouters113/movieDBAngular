@@ -3,6 +3,11 @@
     <button class="close" (click)="closeModal()">Close modal</button>
     <div class="flex">
       <img [src]="movie.Poster" alt="Poser film {{ movie.Title }}">
+      <div>
+        <span>{{movie.Title}}</span>
+        <span>{{movie.Year}}</span>
+        <app-add-movie [movieId]="movie.imdbID"></app-add-movie>
+      </div>
     </div>
   </div>
 </div>

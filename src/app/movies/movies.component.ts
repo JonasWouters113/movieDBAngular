@@ -30,9 +30,9 @@ export class MoviesComponent implements OnInit {
     this.movies = await this.getApiResponseMovies(title);
   }
 
-  onSearch(form: NgForm){
+  async onSearch(form: NgForm){
     this.searchTitle = form.value.title;
     console.log(this.searchTitle)
-    this.getApiResponseMovies(this.searchTitle);
+    this.movies = await this.getApiResponseMovies(this.searchTitle);
   }
 }

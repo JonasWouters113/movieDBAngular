@@ -14,16 +14,16 @@ export class MoviesPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  previousPage(){
+  async previousPage(){
     this.apiService.options.page -= 1;
     if(this.apiService.options.page < 1) this.apiService.options.page = 1;
-    this.moviesComponent.getApiResponseMovies(this.apiService.options.search);
+    this.moviesComponent.movies = await this.moviesComponent.getApiResponseMovies(this.apiService.options.search);
   }
 
-  nextPage(){
+  async nextPage(){
     this.apiService.options.page += 1;
     if(this.apiService.options.page < 1) this.apiService.options.page = 1;
-    this.moviesComponent.getApiResponseMovies(this.apiService.options.search);
+    this.moviesComponent.movies = await this.moviesComponent.getApiResponseMovies(this.apiService.options.search);
   }
 
 }

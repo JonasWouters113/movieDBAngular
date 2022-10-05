@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MoviesPageComponent } from './movies-page/movies-page.component';
 import { ModalComponent } from './modal/modal.component';
 import { FormsModule } from '@angular/forms';
+import { AddMovieComponent } from './add-movie/add-movie.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     MoviesPageComponent,
     ModalComponent,
+    AddMovieComponent,
   ],
   imports: [
     BrowserModule,
