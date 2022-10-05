@@ -34,5 +34,6 @@ export class MoviesComponent implements OnInit {
     this.searchTitle = form.value.title;
     console.log(this.searchTitle)
     this.movies = await this.getApiResponseMovies(this.searchTitle);
+    form.reset();
   }
 }
