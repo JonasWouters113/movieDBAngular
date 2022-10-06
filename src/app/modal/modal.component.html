@@ -1,7 +1,7 @@
 <div *ngIf="visible" class="modal">
   <div class="modal-content">
     <button class="close" (click)="closeModal()">Close modal</button>
-    <div class="flex">
+    <div class="flex flex-col">
       <img [src]="movie.Poster" alt="Poser film {{ movie.Title }}">
       <div>
         <span>{{movie.Title}}</span>

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   options: any = {
     apiKey: "4eaf474d",
-    s: "pirates",
+    s: "the pirates of blood river",
     plot: "full",
     id: 0,
     type: "movie",
@@ -24,7 +23,7 @@ export class ApiService {
   data: any;
 
   getMovies(title: string){
-    this.options.search = title;
+    if(title != '') this.options.search = title;
 
     this.apiCall = `${this.standardApiCallSearch}&type=${this.options.type}`;
     if(this.options.s != "")   this.apiCall += `&s=${this.options.search}`;

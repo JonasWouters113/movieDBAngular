@@ -13,7 +13,7 @@ export class MoviesComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   movies:any;
-  searchTitle: string = 'Pirates';
+  searchTitle: string = "pirates";
 
   ngOnInit(): void {
     this.inVariable(this.searchTitle);
@@ -22,7 +22,7 @@ export class MoviesComponent implements OnInit {
   getApiResponseMovies(title: string){
     return this.apiService.getMovies(title)
     .then((response) => response.json())
-    .then((data) => data.Search)
+    .then((data) => data)
     .catch(error => console.log('error:', error));
   }
 
@@ -31,6 +31,7 @@ export class MoviesComponent implements OnInit {
   }
 
   async onSearch(form: NgForm){
+    if(form.value.title == "") return;
     this.searchTitle = form.value.title;
     console.log(this.searchTitle)
     this.movies = await this.getApiResponseMovies(this.searchTitle);
