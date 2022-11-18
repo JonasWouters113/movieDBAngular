@@ -1,8 +1,0 @@
-<div *ngIf="movie" class="rounded-lg shadow overflow-hidden flex flex-col">
-  <img [src]="movie.Poster" alt="Poser film {{ movie.Title }}" class="w-full">
-  <div class="p-6">
-    <h1>{{ movie.Title }}</h1>
-    <button (click)="toggleDetails()" class="btn-primary">Details</button>
-  </div>
-</div>
-<app-modal [movie]="movie" [visible]="isDetail"></app-modal>
