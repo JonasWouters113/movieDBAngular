@@ -1,0 +1,46 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Mixins
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+
+.lay-out{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 50px auto;
+  .menu{
+    padding: 10px;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    @include sm{
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    background-color: #4d4d4d;
+  }
+  .content{
+    padding: 10px;
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    @include sm{
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+    max-height: 100%;
+    overflow-y: scroll;
+    background-color: black;
+  }
+}
