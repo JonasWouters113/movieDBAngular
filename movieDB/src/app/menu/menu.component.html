@@ -1,6 +1,6 @@
 <ul>
-  <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">Home</a></li>
-  <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/watchlist']">Watchlist</a></li>
-  <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/movies']">All movies</a></li>
-  <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/aboutMe']">About me</a></li>
+  <li [class.activeLi]="rla1.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla1="routerLinkActive" [routerLink]="['/']">Home</a></li>
+  <li [class.activeLi]="rla2.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla2="routerLinkActive" [routerLink]="['/watchlist']">Watchlist</a></li>
+  <li [class.activeLi]="rla3.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla3="routerLinkActive" [routerLink]="['/movies']">All movies</a></li>
+  <li [class.activeLi]="rla4.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla4="routerLinkActive" [routerLink]="['/aboutMe']">About me</a></li>
 </ul>

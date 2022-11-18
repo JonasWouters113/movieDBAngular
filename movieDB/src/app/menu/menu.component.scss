@@ -25,11 +25,12 @@ ul{
     position: relative;
     &:before{
       position: absolute;
-      content: '';
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='50' r='40' stroke='black' stroke-width='2' fill='red'/%3E%3Cpolyline points='20,20 40,25 60,40 80,120 120,140 200,180' style='fill:none;stroke:black;stroke-width:3'/%3E%3C/svg%3E");
       background-color: $color;
       border-radius: 50rem;
       width: 41px;
       height: 41px;
+      top: -10px;
     }
     a {
       color: black;
@@ -48,10 +49,11 @@ ul{
       position: relative;
       transform: translateY(40px);
       &:before{
+        z-index: 1;
         position: absolute;
         content: '';
         height: 100%;
-        width: 20px;
+        width: 18px;
         left: -22px;
         top: -22px;
         display: block;
@@ -60,13 +62,14 @@ ul{
         border-radius: 0 0 0 50rem;
       }
       &:after{
+        z-index: 1;
         position: absolute;
         content: '';
         background-color: $color;
         height: 100%;
         width: $border-width;
         left: -22px;
-        top: -10px;
+        bottom: 0;
         display: block;
       }
       a{
@@ -75,12 +78,14 @@ ul{
         display: flex;
         align-items: center;
       }
+      &.activeLi{
+        background-color: red !important;
+      }
+      &:last-child{
+        &::after{
+          background-color: transparent;
+        }
+      }
     }
-  }
-}
-
-.active{
-  @include sm{
-    background-color: red;
   }
 }
