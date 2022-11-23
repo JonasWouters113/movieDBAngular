@@ -5,5 +5,6 @@ export interface MovieAPI {
   Year: String;
   imdbID: String;
   Score: String;
+  watched: boolean;
   id: number;
 }

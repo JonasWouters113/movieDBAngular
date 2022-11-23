@@ -19,7 +19,7 @@ $screen-sm-min: 576px;
   background-color: black;
   color: white;
   display: grid;
-  grid-template-columns: 200px auto;
+  grid-template-columns: 250px auto;
   grid-template-rows: 50px auto;
   .menu{
     padding: 10px;
@@ -29,7 +29,7 @@ $screen-sm-min: 576px;
       grid-column: 1;
       grid-row: 1 / span 2;
     }
-    background-color: #090088;
+    background-color: #2F2FA2;
   }
   .content{
     padding: 10px;
@@ -41,6 +41,6 @@ $screen-sm-min: 576px;
     }
     max-height: 100%;
     overflow-y: scroll;
-    background-color: #03002E;
+    background-color: #242582;
   }
 }

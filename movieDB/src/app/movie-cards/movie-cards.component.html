@@ -11,4 +11,5 @@
   </div>
   <button *ngIf="!isWatchList" (click)="addMovie(movie)" class="add_button"><i class="fas fa-plus"></i></button>
   <button *ngIf="isWatchList" (click)="removeMovie(movie.id)" class="remove_button"><i class="fas fa-trash"></i></button>
+  <button *ngIf="isWatchList" (click)="toggleWatched(movie)" class="watch_button" [ngClass]="{'bg-green':movie.watched}"><i class="fas fa-eye"></i></button>
 </div>

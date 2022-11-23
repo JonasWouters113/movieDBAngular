@@ -10,6 +10,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MovieCardsComponent } from './movie-cards/movie-cards.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WatchedListComponent } from './watched-list/watched-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     MoviesComponent,
     AboutMeComponent,
-    MovieCardsComponent
+    MovieCardsComponent,
+    WatchedListComponent
   ],
   imports: [
     BrowserModule,

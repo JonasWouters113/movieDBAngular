@@ -9,10 +9,11 @@ import { MovieAPIService } from '../movie-api.service';
 })
 export class MoviesComponent implements OnInit {
   movies: [] = [];
-  search: string = "pirates"
+  search: string = "pirates";
+  page: number = 1;
+  type: string = "movie";
   totalResults: number = 0;
   totalPages: number = 0;
-  page: number = 1;
 
   constructor(private apiService: MovieAPIService) { }
 
@@ -21,14 +22,14 @@ export class MoviesComponent implements OnInit {
   }
 
   getMovies(){
-    this.apiService.getMovies(this.search, this.page.toString()).subscribe((data:any)=>{
+    this.apiService.getMovies(this.search, this.page.toString(), this.type).subscribe((data:any)=>{
       console.log(data);
       if(data.Response == 'True'){
         this.movies = data.Search
         this.totalResults = data.totalResults;
         this.totalPages = Math.ceil(+this.totalResults / 10);
       } else {
-        console.log("Movie does not exist in this DB");
+        alert("Sorry! " + this.type + ": " + this.search + " does not exist in not found!");
       }
     });
   }
@@ -45,6 +46,11 @@ export class MoviesComponent implements OnInit {
 
   OnSearchChange(e: any){
     this.search = e.target.value;
+    this.getMovies();
+  }
+
+  OnTypeChange(e: any){
+    this.type = e.target.value;
     this.getMovies();
   }
 }

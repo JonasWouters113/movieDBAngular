@@ -26,8 +26,15 @@ export class OwnApiService {
     return this.http.get<MovieAPI[]>(apiUrl);
   }
 
+  getWatchedMovies():Observable<MovieAPI[]>{
+    let apiUrl = this.url + "movies?watched=true";
+    console.log(apiUrl)
+    return this.http.get<MovieAPI[]>(apiUrl);
+  }
+
   addMovie(movie: MovieAPI): Observable<any>{
     movie.Score = "0";
+    movie.watched = false;
     let apiUrl = this.url + "movies/";
     return this.http.post(apiUrl, movie);
   }
@@ -39,6 +46,13 @@ export class OwnApiService {
 
   updateMovieScore(movie: MovieAPI, score: String): Observable<MovieAPI>{
     const body = {Score: score};
+    let apiUrl = this.url + "movies/" + movie.id;
+    return this.http.patch<MovieAPI>(apiUrl, body);
+  }
+
+  updateMovieWatched(movie: MovieAPI, watched: boolean): Observable<MovieAPI>{
+    console.log(watched)
+    const body = {watched: !watched};
     let apiUrl = this.url + "movies/" + movie.id;
     return this.http.patch<MovieAPI>(apiUrl, body);
   }

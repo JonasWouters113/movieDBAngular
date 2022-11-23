@@ -1,16 +1,28 @@
-<div class="buttons">
-  <button *ngIf="page < totalPages" (click)="nextPage()">Next</button>
-  <button *ngIf="page > 1" (click)="prevPage()">Prev</button>
-</div>
 <div class="form">
-  <input type="text" [value]="search" (change)="OnSearchChange($event)">
-  <i class="fas fa-search"></i>
+  <input type="text" [value]="search" (change)="OnSearchChange($event)"/>
+  <div class="radio">
+    <label for="type">Type:</label>
+    <div class="options">
+      <div class="option">
+        <input id="movie" type="radio" value="movie" name="type" formControlName="type" (change)="OnTypeChange($event)" checked>
+        <label for="movie">movie</label>
+      </div>
+      <div class="option">
+        <input id="serie" type="radio" value="serie" name="type" formControlName="type" (change)="OnTypeChange($event)">
+        <label for="serie">serie</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="buttons">
+  <button *ngIf="page < totalPages" (click)="nextPage()" class="mr-4">Next</button>
+  <button *ngIf="page > 1" (click)="prevPage()">Prev</button>
 </div>
 <div class="d-flex">
   <app-movie-cards *ngFor="let movie of movies" [movie]="movie"></app-movie-cards>
   <div *ngIf="movies.length == 0">No movies found</div>
 </div>
 <div class="buttons">
-  <button *ngIf="page < totalPages" (click)="nextPage()">Next</button>
+  <button *ngIf="page < totalPages" (click)="nextPage()" class="mr-4">Next</button>
   <button *ngIf="page > 1" (click)="prevPage()">Prev</button>
 </div>

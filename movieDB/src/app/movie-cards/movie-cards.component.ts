@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./movie-cards.component.scss']
 })
 export class MovieCardsComponent implements OnInit {
-  @Input() movie: MovieAPI = {Poster: "", Title: "", Type: "", Year: "", imdbID: "", Score: "4.5", id: 0}
+  @Input() movie: MovieAPI = {Poster: "", Title: "", Type: "", Year: "", imdbID: "", Score: "4.5", watched: true, id: 0}
   @Input() isWatchList: boolean = false;
   edit: boolean = false;
   inDb: boolean = false;
@@ -46,6 +46,11 @@ export class MovieCardsComponent implements OnInit {
 
   addReviewForm(): void{
     this.edit = !this.edit;
+  }
+
+  toggleWatched(movie: MovieAPI){
+    this.ownApiService.updateMovieWatched(this.movie, movie.watched).subscribe(() => console.log("Watched is toggled?"));
+    setTimeout(() => this.watchList.reload(), 250);
   }
 
   onRangeChange(e: any){

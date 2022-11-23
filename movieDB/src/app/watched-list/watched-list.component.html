@@ -1,0 +1,4 @@
+<div class="d-flex">
+  <app-movie-cards *ngFor="let movie of watchedList" [movie]="movie" [isWatchList]="inWatchedList"></app-movie-cards>
+  <div *ngIf="watchedList.length == 0">No movies found in watchedList</div>
+</div>

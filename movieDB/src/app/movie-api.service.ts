@@ -11,10 +11,11 @@ export class MovieAPIService {
   constructor(private http: HttpClient) {
   }
 
-  getMovies(search: string, page: string):Observable<any>{
+  getMovies(search: string, page: string, type: string):Observable<any>{
     let apiUrl = this.url + new URLSearchParams({
       s: search,
-      page: page
+      page: page,
+      type: type
     })
 
     return this.http.get<any>(apiUrl);

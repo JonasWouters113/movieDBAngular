@@ -2,7 +2,7 @@
 $screen-sm-min: 576px;
 
 $border-width: 4px;
-$color: lightgreen;
+$color: #F64C72;
 
 // Mixins
 // Small devices
@@ -92,7 +92,7 @@ $color: lightgreen;
           display: block;
         }
         &.active{
-          background-color: red !important;
+          background-color: greenyellow !important;
         }
         &:last-child{
           &::after{
