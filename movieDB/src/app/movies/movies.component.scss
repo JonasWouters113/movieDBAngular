@@ -1,0 +1,29 @@
+.buttons{
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.form{
+  padding: 1rem;
+  border-radius: 0.6rem;
+  background-color: #090088;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  position: relative;
+  display: inline-block;
+  input[type=text]{
+    background-color: white;
+    border: none;
+    outline: none;
+    padding: 0.2rem;
+    border-radius: 50rem;
+    display: block;
+  }
+  i.fas.fa-search{
+    color: black;
+    position: absolute;
+    top: 50%;
+    right: 1.3rem;
+    transform: translateY(-50%);
+  }
+}

@@ -1,6 +1,12 @@
-<ul>
-  <li [class.activeLi]="rla1.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla1="routerLinkActive" [routerLink]="['/']">Home</a></li>
-  <li [class.activeLi]="rla2.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla2="routerLinkActive" [routerLink]="['/watchlist']">Watchlist</a></li>
-  <li [class.activeLi]="rla3.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla3="routerLinkActive" [routerLink]="['/movies']">All movies</a></li>
-  <li [class.activeLi]="rla4.isActive"><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" #rla4="routerLinkActive" [routerLink]="['/aboutMe']">About me</a></li>
-</ul>
+<div class="list">
+  <div class="before" (click)="onMenuClick()">
+    <i class="fa-solid fa-burger" *ngIf="!menuOpen"></i>
+    <i class="fa-sharp fa-solid fa-circle-xmark" *ngIf="menuOpen"></i>
+  </div>
+  <div class="listItems" [ngClass]="{'close': !menuOpen}">
+    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" >Home</div>
+    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/watchlist']" >Watchlist</div>
+    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/movies']" >All movies</div>
+    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/aboutMe']" >About me</div>
+  </div>
+</div>

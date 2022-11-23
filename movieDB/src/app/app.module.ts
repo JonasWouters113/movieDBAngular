@@ -8,6 +8,8 @@ import { WatchlistComponent } from './watchlist/watchlist.component';
 import { MenuComponent } from './menu/menu.component';
 import { MoviesComponent } from './movies/movies.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { MovieCardsComponent } from './movie-cards/movie-cards.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,16 @@ import { AboutMeComponent } from './about-me/about-me.component';
     WatchlistComponent,
     MenuComponent,
     MoviesComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    MovieCardsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [MoviesComponent,WatchlistComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,0 +1,41 @@
+.card{
+  width: 150px;
+  background-color: #090088;
+  border: 3px solid #090088;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+  .info{
+    padding: 10px;
+  }
+  button{
+    margin-top: 0;
+    position: absolute;
+    top: -0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.edit_button{
+      right: 0;
+    }
+    &.add_button{
+      right: 0;
+      background-color: greenyellow;
+      color: black;
+    }
+    &.remove_button{
+      left: 0;
+      background-color: red;
+      border: 1px solid red;
+    }
+  }
+}

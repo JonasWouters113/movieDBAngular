@@ -37,3 +37,43 @@ a{
 ::-webkit-scrollbar-thumb:hover {
   background: #ddd;
 }
+
+.d-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 10px;
+}
+
+button{
+  background-color: black;
+  border: 1px solid greenyellow;
+  color: white;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  border-radius: 50rem;
+  margin-top: 0.4rem;
+}
+
+
+form{
+  input[type=range]{
+    margin-top: 0.4rem;
+    appearance: none;
+    outline: none;
+    width: 100%;
+    border-radius: 50rem;
+    overflow: hidden;
+    &::-webkit-slider-thumb{
+      appearance: none;
+      background-color: rgb(0, 0, 0);
+      height: 1rem;
+      width: 0.5rem;
+      position: relative;
+      top: -0.2rem;
+    }
+    &::-webkit-slider-runnable-track{
+      appearance: none;
+      background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(211,255,0,1) 100%);
+    }
+  }
+}

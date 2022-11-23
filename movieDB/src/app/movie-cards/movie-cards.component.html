@@ -1,0 +1,14 @@
+<div class="card">
+  <img [src]="movie.Poster" [alt]="movie.imdbID"/>
+  <div class="info">
+    <div class="name"><span>{{ movie.Title}}</span></div>
+    <div class="year">{{ movie.Year }}</div>
+    <button *ngIf="isWatchList" (click)="addReviewForm()" class="edit_button"><i class="fas fa-pen"></i></button>
+    <div *ngIf="isWatchList">Score: {{ score }}</div>
+    <form *ngIf="edit">
+      <input type="range" min="0" max="10" step="0.5" [value]="movie.Score" (change)="onRangeChange($event)">
+    </form>
+  </div>
+  <button *ngIf="!isWatchList" (click)="addMovie(movie)" class="add_button"><i class="fas fa-plus"></i></button>
+  <button *ngIf="isWatchList" (click)="removeMovie(movie.id)" class="remove_button"><i class="fas fa-trash"></i></button>
+</div>
