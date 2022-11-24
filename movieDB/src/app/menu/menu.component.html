@@ -4,10 +4,8 @@
     <i class="fa-sharp fa-solid fa-circle-xmark" *ngIf="menuOpen"></i>
   </div>
   <div class="listItems" [ngClass]="{'close': !menuOpen}">
-    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" >Home</div>
-    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/movies']" >All movies</div>
+    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" >All movies</div>
     <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/watchlist']" >Watchlist</div>
     <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/watched']" >Watched movies</div>
-    <div class="listItem" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/aboutMe']" >About me</div>
   </div>
 </div>

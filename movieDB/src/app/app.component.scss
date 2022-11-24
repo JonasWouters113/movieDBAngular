@@ -20,7 +20,7 @@ $screen-sm-min: 576px;
   color: white;
   display: grid;
   grid-template-columns: 250px auto;
-  grid-template-rows: 50px auto;
+  grid-template-rows: 1fr 5fr;
   .menu{
     padding: 10px;
     grid-column: 1 / span 2;

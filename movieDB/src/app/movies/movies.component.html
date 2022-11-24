@@ -1,18 +1,5 @@
 <div class="form">
   <input type="text" [value]="search" (change)="OnSearchChange($event)"/>
-  <div class="radio">
-    <label for="type">Type:</label>
-    <div class="options">
-      <div class="option">
-        <input id="movie" type="radio" value="movie" name="type" formControlName="type" (change)="OnTypeChange($event)" checked>
-        <label for="movie">movie</label>
-      </div>
-      <div class="option">
-        <input id="serie" type="radio" value="serie" name="type" formControlName="type" (change)="OnTypeChange($event)">
-        <label for="serie">serie</label>
-      </div>
-    </div>
-  </div>
 </div>
 <div class="buttons">
   <button *ngIf="page < totalPages" (click)="nextPage()" class="mr-4">Next</button>

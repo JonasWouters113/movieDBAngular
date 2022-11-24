@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OwnApiService {
-  url = "http://localhost:3000/";
+  //url = "http://localhost:3000/";
+  url = "https://database.loca.lt/"
 
   constructor(private http: HttpClient) {}
 

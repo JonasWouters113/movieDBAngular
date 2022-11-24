@@ -7,11 +7,10 @@ import { WatchedListComponent } from './watched-list/watched-list.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: MoviesComponent},
   {path: 'movies', component: MoviesComponent},
   {path: 'watchlist', component: WatchlistComponent},
   {path: 'watched', component: WatchedListComponent},
-  {path: 'aboutMe', component: AboutMeComponent},
 ];
 
 @NgModule({

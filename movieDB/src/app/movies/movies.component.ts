@@ -49,9 +49,4 @@ export class MoviesComponent implements OnInit {
     this.page = 1;
     this.getMovies();
   }
-
-  OnTypeChange(e: any){
-    this.type = e.target.value;
-    this.getMovies();
-  }
 }
