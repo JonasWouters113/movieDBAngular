@@ -1,4 +1,5 @@
+<input type="text" [value]="search" (change)="onSearchChange($event)"/>
 <div class="d-flex">
-  <app-movie-cards *ngFor="let movie of watchedList" [movie]="movie" [isWatchList]="inWatchedList"></app-movie-cards>
+  <app-movie-cards *ngFor="let movie of watchedList" [movie]="movie" [inWatchList]="inWatchedList"></app-movie-cards>
   <div *ngIf="watchedList.length == 0">No movies found in watchedList</div>
 </div>

@@ -13,16 +13,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./movie-cards.component.scss']
 })
 export class MovieCardsComponent implements OnInit {
-  @Input() movie: MovieAPI = {Poster: "", Title: "", Type: "", Year: "", imdbID: "", Score: "4.5", watched: true, id: 0}
-  @Input() isWatchList: boolean = false;
+  @Input() movie: MovieAPI = {Poster: "", Title: "", Type: "", Year: "", imdbID: "", score: 4.5, watched: true, id: 0}
+  @Input() inWatchList: boolean = false;
+  inWatchedList: boolean = false;
   edit: boolean = false;
   inDb: boolean = false;
-  score: String = "";
+  score: number = 0;
 
   constructor(private ownApiService: OwnApiService, private router: Router, private watchList: WatchlistComponent) { }
 
   ngOnInit(): void {
-    this.score = this.movie.Score;
+    this.score = this.movie.score;
+    this.inWatchedList = this.movie.watched;
+    console.log(this.inWatchedList)
   }
 
   addMovie(movie:MovieAPI): void {
@@ -31,7 +34,7 @@ export class MovieCardsComponent implements OnInit {
     setTimeout(() => {
       if(movies.length == 0){
         this.ownApiService.addMovie(movie).subscribe((response) => console.log(response));
-        setTimeout(() => this.router.navigate(['/watchlist']), 400);
+        setTimeout(() => this.router.navigate(['/watchlist']), 500);
       } else {
         let alertString = "Movie: " + movie.Title + " is already in watchlist!"
         alert(alertString)
@@ -41,7 +44,7 @@ export class MovieCardsComponent implements OnInit {
 
   removeMovie(id: number): void {
     this.ownApiService.removeMovie(id).subscribe(() => console.log(`Movie: ${id} id deleted`));
-    setTimeout(() => this.watchList.reload(), 250);
+    setTimeout(() => this.watchList.reload(), 500);
   }
 
   addReviewForm(): void{
@@ -50,7 +53,7 @@ export class MovieCardsComponent implements OnInit {
 
   toggleWatched(movie: MovieAPI){
     this.ownApiService.updateMovieWatched(this.movie, movie.watched).subscribe(() => console.log("Watched is toggled?"));
-    setTimeout(() => this.watchList.reload(), 250);
+    setTimeout(() => this.watchList.reload(), 500);
   }
 
   onRangeChange(e: any){

@@ -46,6 +46,7 @@ export class MoviesComponent implements OnInit {
 
   OnSearchChange(e: any){
     this.search = e.target.value;
+    this.page = 1;
     this.getMovies();
   }
 
